@@ -2,17 +2,29 @@ import React from 'react';
 import styles from './NotesList.module.css';
 // only export one component per file.
 // can have multiple helper component that go into the parent component being exported
-function NotesListItem ({text}) {
+function NotesListItem ({id, text, handleClick}) {
     return(
-        <li>{text}</li>
+        <li>
+            <a 
+                href="http:"
+                onClick={(e) => {
+                    e.preventDefault();
+                    console.log("clicked");
+                    handleClick(id);
+                }}
+            >
+                {text}
+            </a>
+        </li>
     )
+
 }
-export default function NotesList ({notes, className}) {
+export default function NotesList ({notes, className, handleSelection}) {
     // 
-    const items = notes.map(note => <NotesListItem text={note.title}/>);
+    const items = notes.map(note => <NotesListItem id={note.id} text={note.title} handleClick={handleSelection}/>);
     return(
-            <ul className={styles.NotesList}>
+        <li>
             {items}
-            </ul>
+        </li>
     )
 }
