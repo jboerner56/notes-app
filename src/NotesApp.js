@@ -47,7 +47,7 @@ export default class NotesApp extends React.Component{
     _selectNote = (id) => {
         // choose note to show
         this.setState({
-            selectNote: id
+            selectedNote: id
         });
     }
 }
