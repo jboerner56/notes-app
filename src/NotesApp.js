@@ -5,19 +5,39 @@ import styles from './NotesApp.module.css';
 export default class NotesApp extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            notes: []  // this will hold an array of objects
+        this.state = {// this will hold an array of objects
+            notes: [
+                {
+                    id: '101',
+                    title:'first note',
+                    text: 'this is the first note'
+                },
+                {
+                    id: '102',
+                    title:'second note',
+                    text: 'prolly the second note'
+                },
+                {
+                    id: '103',
+                    title: 'third note',
+                    text: 'will be the third note'
+                },
+
+
+            ]  
         }
     }
     render() {
         return (
             <div className={styles.app}>
-                <div className={styles.list}>
-                    <NotesList/>
-                </div>
-                <div>
-                    <NotesDetail className={styles.detail}/>
-                </div>
+                    <NotesList 
+                    className={styles.list}
+                    notes={this.state.notes}
+                    />
+                    <NotesDetail 
+                    className={styles.detail}
+                    
+                    />
             </div>
         )
     }
