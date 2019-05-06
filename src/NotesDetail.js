@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NotesDetail(props){
     return (
-        <div>
+        <div className={props.className}>
             Notes Detail
         </div>
     );
