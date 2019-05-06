@@ -38,6 +38,7 @@ export default class NotesApp extends React.Component{
                     <NotesDetail 
                     className={styles.detail}
                     note={theNote}
+                    handleSave={this._updateNote}
                     />
             </div>
         );
@@ -73,18 +74,18 @@ export default class NotesApp extends React.Component{
         });
         //=============================================================
         // version 2
-        const updatedNotes2 = this.state.notes.filter(note => {
-            return note.id !== idToUpdate;
-        });
-        const theNoteToUpdate = this.state.notes.find(note => note.id === idToUpdate);
-        this.setState({
-            notes: [
-                ...updatedNotes2,
-                {
-                    ...theNoteToUpdate,
-                    text: newText
-                }
-            ]
-        });
+        // const updatedNotes2 = this.state.notes.filter(note => {
+        //     return note.id !== idToUpdate;
+        // });
+        // const theNoteToUpdate = this.state.notes.find(note => note.id === idToUpdate);
+        // this.setState({
+        //     notes: [
+        //         ...updatedNotes2,
+        //         {
+        //             ...theNoteToUpdate,
+        //             text: newText
+        //         }
+        //     ]
+        // });
     }
 }

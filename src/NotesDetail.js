@@ -47,6 +47,7 @@ export default class NotesDetail extends React.Component{
                 }
                 <br />
                 <button onClick={this._toggleEdit}>Toggle Edit</button>
+                <button onClick={this._saveDraft}>Save</button>
             </div>
         );
     }
@@ -59,5 +60,8 @@ export default class NotesDetail extends React.Component{
         this.setState({
             draftText: newText
         });
+    }
+    _saveDraft = () => {
+        this.props.handleSave(this.state.id, this.state.draftText);
     }
 }
