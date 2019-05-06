@@ -23,8 +23,6 @@ export default class NotesApp extends React.Component{
                     title: 'third note',
                     text: 'will be the third note'
                 },
-
-
             ]  
         }
     }
