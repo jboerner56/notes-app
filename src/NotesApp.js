@@ -29,6 +29,7 @@ export default class NotesApp extends React.Component{
         }
     }
     render() {
+        const theNote = this.state.notes.find(note => this.state.selectedNote === note.id);
         return (
             <div className={styles.app}>
                     <NotesList 
@@ -38,10 +39,10 @@ export default class NotesApp extends React.Component{
                     />
                     <NotesDetail 
                     className={styles.detail}
-                    
+                    note={theNote}
                     />
             </div>
-        )
+        );
     }
     _selectNote = (id) => {
         // choose note to show

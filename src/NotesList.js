@@ -6,7 +6,7 @@ function NotesListItem ({id, text, handleClick}) {
     return(
         <li>
             <a 
-                href="http:"
+                href="#"
                 onClick={(e) => {
                     e.preventDefault();
                     console.log("clicked");
@@ -16,15 +16,15 @@ function NotesListItem ({id, text, handleClick}) {
                 {text}
             </a>
         </li>
-    )
+    );
 
 }
 export default function NotesList ({notes, className, handleSelection}) {
     // 
     const items = notes.map(note => <NotesListItem id={note.id} text={note.title} handleClick={handleSelection}/>);
     return(
-        <li>
+        <ul className={styles.notesList}>
             {items}
-        </li>
+        </ul>
     )
 }
